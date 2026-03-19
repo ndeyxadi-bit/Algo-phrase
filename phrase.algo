@@ -1,0 +1,30 @@
+ALGORITHM Phrase1
+VAR
+    C : caractère
+    longueur, mots, voyelles: entier
+BEGIN
+    longueur <- 0
+    mots <- 1
+    voyelles <- 0
+
+    LIRE C
+
+    TANTQUE C <> '.' FAIRE
+        longueur <- longueur + 1
+
+        SI C = ' ' ALORS
+            mots <- mots + 1
+        FINSI
+
+        SI C = 'a' OU C = 'e' OU C = 'i' OU C = 'o' OU C = 'u' OU C = 'A' OU C = 'E' OU C = 'I' OU C = 'O' OU C = 'U' ALORS
+            voyelles <- voyelles + 1
+        FINSI
+
+        LIRE C
+    FIN TANTQUE
+
+    ECRIRE "Longueur de la phrase : ", longueur
+    ECRIRE "Nombre de mots : ", mots + 1 // Ajouter 1 pour le dernier mot
+    ECRIRE "Nombre de voyelles : ", voyelles
+
+END
